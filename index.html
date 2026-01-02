@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality Pedha Center | Premium Indian Sweets</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* --- Global Styles --- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+    background: linear-gradient(120deg, #fff0e5, #ffe6f0);
+    color:#4b3e2a;
+    line-height:1.6;
+    scroll-behavior:smooth;
+}
+a{text-decoration:none;color:inherit;}
+
+/* --- Navbar --- */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #ff7f50, #ff1493);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #fff;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.nav-links li a {
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.nav-links li a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Hamburger for mobile */
+.navbar .menu-toggle{
+    display:none;
+    cursor:pointer;
+    font-size:1.5em;
+    color:#fff;
+}
+
+/* --- Hero Carousel --- */
+.hero{position:relative;width:100%;height:100vh;overflow:hidden;margin-top:60px;}
+.hero img{width:100%;height:100vh;object-fit:cover;position:absolute;opacity:0;transition:opacity 1s ease-in-out;}
+.hero img.active{opacity:1;}
+.hero-overlay{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    background: rgba(0,0,0,0.25);
+}
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    background: linear-gradient(135deg, rgba(235, 25, 25, 0.8), rgba(255, 140, 0, 0.7));
+    padding:30px 50px;
+    border-radius:25px;
+}
+.hero-text h1{
+    font-family:'Playfair Display',serif;
+    font-size:3em;
+    margin-bottom:15px;
+    color:#fff;
+    text-shadow:2px 2px 15px #8b4513;
+}
+.hero-text p{
+    font-size:1.3em;
+    margin-bottom:20px;
+    color:#fff;
+}
+.hero-text a{
+    background: linear-gradient(45deg, #a09bf4, #253df2);
+    color:#fff;
+    padding:15px 35px;
+    margin:5px;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+    display:inline-block;
+}
+.hero-text a:hover{
+    background: linear-gradient(45deg, #ff4500, #ff69b4);
+}
+
+/* --- Sections --- */
+section{padding:80px 20px;max-width:1200px;margin:auto;}
+h2{font-family:'Playfair Display',serif;font-size:2.8em;margin-bottom:30px;color:#8b5e3c;text-align:center;}
+p{font-size:1.15em;text-align:center;margin-bottom:20px;}
+
+/* --- About Us --- */
+.about{
+    background: linear-gradient(to right, #fff3e6, #ffe6f0);
+    border-radius:25px;
+    padding:50px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* --- Product Carousel --- */
+.product-carousel{
+    display:flex;
+    overflow-x:auto;
+    gap:30px;
+    scroll-snap-type:x mandatory;
+    padding-bottom:20px;
+}
+.product-carousel::-webkit-scrollbar{display:none;}
+.product{
+    flex:0 0 300px;
+    background: linear-gradient(145deg, #fffaf0, #ffe6cc);
+    border:none;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    scroll-snap-align:start;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+.product:hover{
+    transform:scale(1.08);
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+.product img{width:100%;border-radius:15px;margin-bottom:15px;}
+.product h3{font-family:'Playfair Display',serif;color:#8b5e3c;margin-bottom:10px;}
+
+/* --- Gallery Section --- */
+.gallery {
+    background: linear-gradient(to right, #fffaf0, #ffe6f0);
+    border-radius: 25px;
+    padding: 50px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin: 50px auto;
+    max-width: 1200px; /* Center section */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center; /* Center items horizontally */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;  /* Ensure grid item takes full cell width */
+    max-width: 300px; /* Optional: limit image size */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    font-weight: 600;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .gallery-item img { height: 200px; }
+}
+
+
+/* --- Order Section --- */
+.order{
+    text-align:center;
+    background: linear-gradient(135deg, #eca7b3, #38f596);
+    border-radius:25px;
+    padding:50px;
+    margin-top:50px;
+    color:#fffaf0;
+}
+.order p{font-size:1.2em;margin-bottom:25px;}
+.order a{
+    background: linear-gradient(45deg, #552df5, #6e6cf0);
+    color:#fffaf0;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:1.1em;
+    margin:5px;
+    display:inline-block;
+    transition:0.3s;
+}
+.order a:hover{
+    background: linear-gradient(45deg, #6a0dad, #9370db);
+}
+
+/* --- Contact / Visit --- */
+.contact{text-align:center;}
+.contact p{font-size:1.1em;margin:5px 0;}
+iframe{width:100%;max-width:700px;height:350px;border:none;margin-top:25px;border-radius:20px;}
+
+/* --- Footer --- */
+footer{text-align:center;padding:25px;background: linear-gradient(to right, #09135d, #4799e6);color:#fffaf0;font-size:1em;}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background: linear-gradient(135deg, #25d366, #1ebe5b);
+    color:white;
+    font-size:22px;
+    padding:18px 22px;
+    border-radius:50px;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+.whatsapp-btn:hover{
+    background: linear-gradient(135deg, #128c7e, #0f6f63);
+}
+
+/* --- Responsive --- */
+@media(max-width:768px){
+    .hero-text h1{font-size:2.2em;}
+    .product{flex:0 0 250px;}
+    .navbar .menu-toggle{display:block;}
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        background: linear-gradient(90deg, #ff7f50, #ff1493);
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        padding:20px;
+        border-radius:10px;
+    }
+    .nav-links.show{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="logo">Quality Pedha</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#contact">Visit</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Carousel -->
+<div class="hero" id="hero">
+    <img src="images/quality pedha.png" class="active" alt="Pedha Hero 1">
+    <img src="images/mammy papa shop.png" alt="Pedha Hero 2">
+    <img src="images/pedha shop.png" alt="Pedha Hero 3">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Quality Pedha Center</h1>
+        <p>Tradition of Taste. Purity You Can Trust.</p>
+        <a href="#order">Order Now</a>
+        <a href="#products">Explore Specials</a>
+    </div>
+</div>
+
+<!-- About Us -->
+<section class="about" id="about">
+<h2>Our Story</h2>
+<p>Quality Pedha Center is a <strong>family-owned sweet shop</strong>, proudly run by <strong>Devidas Gadekar (Gadekar Bandhu)</strong>. For generations, we have been crafting authentic Indian sweets using <strong>pure milk, premium ingredients, and traditional recipes</strong>. Every pedha is made with care, preserving the rich flavor and soft texture of homemade sweets.</p>
+</section>
+
+<!-- Product Carousel -->
+<section id="products">
+<h2>Our Specialties</h2>
+<div class="product-carousel">
+    <div class="product">
+        <img src="images/KesarPedaSR-3.webp" alt="Classic Milk Pedha">
+        <h3>Classic Quality Pedha</h3>
+        <p>Soft, rich & perfectly sweet pedhas for everyday enjoyment.</p>
+    </div>
+    <div class="product">
+        <img src="images/khava.webp" alt="Kesar Pedha">
+        <h3>Khava</h3>
+        <p>Infused with real saffron for that royal aroma and taste.</p>
+    </div>
+    <div class="product">
+        <img src="images/basundi.webp" alt="Dry Fruit Pedha">
+        <h3>Dry Fruit Basundi</h3>
+        <p>Loaded with premium nuts for an extra crunchy delight.</p>
+    </div>
+    <div class="product">
+        <img src="images/pedha shop.png" alt="Festival Pedha">
+        <h3>Festival Pedha</h3>
+        <p>Special pedhas made fresh for celebrations & festivals.</p>
+    </div>
+</div>
+</section>
+
+<!-- Gallery & Customers Section -->
+<section id="gallery" class="gallery">
+  <h2>Our Shop & Happy Moments</h2>
+  <p>Take a glimpse of our shop, premium packaging, and happy customers enjoying our sweets!</p>
+  
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="images/pedha shop.png" alt="Shop Interior">
+      <p>Inside our cozy shop</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/shop view.jpeg" alt="Shop Exterior">
+      <p>Welcome to Quality Pedha Center</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/Box Design.jpeg" alt="Pedha Box">
+      <p>Premium Packaging</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/Customers.jpeg" alt="Happy Customers">
+      <p>Our happy customers</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/quality pedha.png" alt="Gift Box">
+      <p>Special Gift Boxes</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/mammy papa shop.png" alt="Customers Enjoying">
+      <p>Celebration Moments</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Order Section -->
+<section class="order" id="order">
+<h2>Place Your Order</h2>
+<p>Freshly prepared every day. Pickup or local delivery available.</p>
+<a href="tel:9890789491">Call Now</a>
+<a href="https://wa.me/919890789491" target="_blank">Order via WhatsApp</a>
+</section>
+
+<!-- Contact / Visit -->
+<section class="contact" id="contact">
+<h2>Visit Us</h2>
+<p>Quality Pedha Center, Nashik–Pune Highway</p>
+<p>Near Sitai Electronics, Ghargaon – 422620, Maharashtra</p>
+<p>Phone: 9890789491</p>
+<iframe src="https://www.google.com/maps?q=Quality+Pedha+Center,+Ghargaon,+Maharashtra&output=embed"></iframe>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2026 Quality Pedha Center | Crafted with ❤️ by Gadekar Family</p>
+<p>Address:  Quality Pedha center Ghargaon, Nashik- Pune Highway, near Sitai Electronics, Ghargaon, 422620</p>
+<p>Contact No: 9890789491</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919890789491" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+
+<!-- Scripts -->
+<script>
+// Hero Carousel
+let slides = document.querySelectorAll('.hero img');
+let current = 0;
+function carousel(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+}
+setInterval(carousel,4000);
+
+// Mobile Navbar Toggle
+function toggleMenu(){
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
