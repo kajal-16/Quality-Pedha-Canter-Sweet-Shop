@@ -121,6 +121,63 @@ p{font-size:1.15em;text-align:center;margin-bottom:20px;}
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* --- Timings & Availability Section --- */
+.timing-section {
+    background: linear-gradient(135deg, #fff3e0, #ffe0ec);
+    border-radius: 30px;
+    padding: 70px 30px;
+    margin: 80px auto;
+    max-width: 1200px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.timing-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #6b3e26;
+}
+
+.timing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.timing-card {
+    background: linear-gradient(145deg, #ffffff, #fff0d9);
+    padding: 35px 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.timing-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #8b4513;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.timing-card p {
+    font-size: 1.05em;
+    margin: 8px 0;
+    color: #4b3e2a;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .timing-section {
+        padding: 50px 20px;
+    }
+}
+
+
 /* --- Product Carousel --- */
 .product-carousel{
     display:flex;
@@ -132,7 +189,7 @@ p{font-size:1.15em;text-align:center;margin-bottom:20px;}
 .product-carousel::-webkit-scrollbar{display:none;}
 .product{
     flex:0 0 300px;
-    background: linear-gradient(145deg, #fffaf0, #ffe6cc);
+    background: linear-gradient(145deg, #ffffff, #fff0d9);
     border:none;
     border-radius:20px;
     padding:20px;
@@ -311,8 +368,69 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
 <!-- About Us -->
 <section class="about" id="about">
 <h2>Our Story</h2>
-<p>Quality Pedha Center is a <strong>family-owned sweet shop</strong>, proudly run by <strong>Devidas Gadekar (Gadekar Bandhu)</strong>. For generations, we have been crafting authentic Indian sweets using <strong>pure milk, premium ingredients, and traditional recipes</strong>. Every pedha is made with care, preserving the rich flavor and soft texture of homemade sweets.</p>
+<p>
+    <strong>Quality Pedha Center</strong> is the most famous and trusted pedha shop in Ghargaon, proudly serving customers for over
+    <strong>50 years</strong>. Built on generations of trust and excellence, this family-owned sweet shop is lovingly run by
+    <strong>Devidas Gadekar (Gadekar Bandhu)</strong>.
+  </p>
+
+  <p>
+    For decades, we have been crafting authentic Indian sweets using
+    <strong>pure milk, premium ingredients, and time-honored traditional recipes</strong>.
+    We make and serve <strong>fresh pedhas every day</strong>, ensuring rich flavor, soft texture, and the homemade taste our
+    customers love. More than just a sweet shop, Quality Pedha Center is a legacy of taste, tradition, and trust.
+  </p>
+
+  <hr style="margin:40px auto; width:60%; border:1px solid #e0cfc2;">
+
+  <!-- Marathi -->
+  <p>
+    <strong>क्वालिटी पेढा सेंटर</strong> हे घारगावमधील सर्वात प्रसिद्ध आणि विश्वासार्ह पेढ्यांचे दुकान असून
+    गेल्या <strong>५० वर्षांहून अधिक काळ</strong> ग्राहकांची सेवा करत आहे.
+    पिढ्यान्‌पिढ्या जपलेल्या विश्वास आणि गुणवत्तेच्या परंपरेवर उभे असलेले हे कुटुंबीय व्यवसाय
+    <strong>देविदास गाडेकर (गाडेकर बंधू)</strong> प्रेमाने चालवत आहेत.
+  </p>
+
+  <p>
+    अनेक दशकांपासून आम्ही <strong>शुद्ध दूध, उत्तम दर्जाचे साहित्य आणि पारंपरिक पद्धतींचा</strong> वापर करून
+    अस्सल भारतीय मिठाया तयार करत आहोत.
+    <strong>दररोज ताजे पेढे तयार करून ग्राहकांना दिले जातात</strong>, ज्यामध्ये समृद्ध चव, मऊसर पोत
+    आणि घरगुती स्वाद जपला जातो.
+    केवळ मिठाईचे दुकान नसून, क्वालिटी पेढा सेंटर म्हणजे <strong>चव, परंपरा आणि विश्वास यांचा वारसा</strong> आहे.
+  </p>
 </section>
+
+<!-- Timings & Availability -->
+<section class="timing-section" id="timings">
+  <h2>Store Timings & Availability</h2>
+  <p class="timing-subtitle">
+    Freshly prepared pedhas every day with trusted quality and tradition
+  </p>
+
+  <div class="timing-cards">
+    <div class="timing-card">
+      <h3>🕒 Store Timings</h3>
+      <p><strong>Open:</strong> 8:00 AM</p>
+      <p><strong>Close:</strong> 9:30 PM</p>
+      <p><strong>Days:</strong> Open All Days</p>
+    </div>
+
+    <div class="timing-card">
+      <h3>🍬 Fresh Availability</h3>
+      <p>Fresh pedhas made & served daily</p>
+      <p>Khava & Basundi Pedha available</p>
+      <p>Hygienic & traditional preparation</p>
+    </div>
+
+    <div class="timing-card">
+      <h3>🎉 Bulk Orders</h3>
+      <p>Weddings & Engagements</p>
+      <p>Festivals & Special Events</p>
+      <p>Advance booking recommended</p>
+    </div>
+  </div>
+</section>
+
 
 <!-- Product Carousel -->
 <section id="products">
@@ -371,6 +489,14 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
       <img src="images/mammy papa shop.png" alt="Customers Enjoying">
       <p>Celebration Moments</p>
     </div>
+    <div class="gallery-item">
+      <img src="images/Flex 1.jpeg" alt="Customers Enjoying">
+      <p>Shop Flex</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/Shop Photo1.jpeg" alt="Customers Enjoying">
+      <p>Shop Moments</p>
+    </div>
   </div>
 </section>
 
@@ -391,7 +517,17 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
 <p>Phone: 9890789491</p>
 <iframe src="https://www.google.com/maps?q=Quality+Pedha+Center,+Ghargaon,+Maharashtra&output=embed"></iframe>
 </section>
+<!-- Store Timings & Availability -->
+<div style="margin-top:30px; padding:25px; background:rgba(255,255,255,0.15); border-radius:20px;">
+  <h3 style="font-family:'Playfair Display',serif; margin-bottom:15px;">
+    🕒 Store Timings & Availability
+  </h3>
 
+  <p><strong>Timings:</strong> 8:00 AM – 9:30 PM (Open All Days)</p>
+  <p><strong>Fresh Pedhas:</strong> Available every day</p>
+  <p><strong>Bulk Orders:</strong> Weddings, festivals & special events</p>
+  <p><strong>Advance Booking:</strong> Recommended for large orders</p>
+</div>
 <!-- Footer -->
 <footer>
 <p>&copy; 2026 Quality Pedha Center | Crafted with ❤️ by Gadekar Family</p>
