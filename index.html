@@ -263,6 +263,98 @@ p{font-size:1.15em;text-align:center;margin-bottom:20px;}
     .gallery-item img { height: 200px; }
 }
 
+/* Vedio Section */
+.video-section{
+    background: linear-gradient(135deg, #fff3e0, #ffe6f0);
+    border-radius: 30px;
+    padding: 70px 30px;
+    margin: 80px auto;
+    max-width: 1200px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.video-grid video{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* reviews section */
+.reviews-section{
+    background: linear-gradient(135deg, #f7d6e0, #d6e6ff);
+    border-radius:30px;
+    padding:70px 30px;
+    margin:80px auto;
+    max-width:1200px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.review-card{
+    background:#fff;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.review-card:hover{
+    transform: translateY(-8px);
+}
+
+.review-text{
+    font-size:1.1em;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.review-card h4{
+    color:#ff9800;
+    margin-bottom:5px;
+}
+
+.review-card span{
+    font-weight:600;
+    color:#6b3e26;
+}
+
+/* Add Reviews */
+
+.add-review{
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff5e1, hsl(322, 73%, 72%));
+}
+
+.qr-img{
+  width: 220px;
+  margin: 25px 0;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.small-text{
+  color: #6b3e26;
+  font-style: italic;
+}
+
+
+
 
 /* --- Order Section --- */
 .order{
@@ -345,8 +437,12 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
             <li><a href="#about">About</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#add-review">Add Review</a></li> <!-- Fixed link -->
             <li><a href="#order">Order</a></li>
             <li><a href="#contact">Visit</a></li>
+            <li><a href="#timings">Timings</a></li> <!-- Optional, if you want direct link -->
         </ul>
     </div>
 </nav>
@@ -500,6 +596,82 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
   </div>
 </section>
 
+<!-- Video Section -->
+<section id="videos" class="video-section">
+  <h2>Our Sweet Journey</h2>
+  <p>Watch how we prepare our pedhas and the love we serve every day</p>
+
+  <div class="video-grid">
+    <video controls poster="images/video-thumb1.jpg">
+      <source src="videos/Shop Vedio 1.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+
+    <video controls poster="images/video-thumb2.jpg">
+      <source src="videos/Shop Pedha making.mp4" type="video/mp4">
+    </video>
+
+    <video controls poster="images/video-thumb3.jpg">
+      <source src="videos/customer-review.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section class="reviews-section" id="reviews">
+  <h2>What Our Customers Say</h2>
+  <p>Trusted by generations for taste & purity</p>
+
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <p class="review-text">
+        "I had a wonderful experience at this sweet shop! The variety of sweets was impressive, 
+        and everything tasted fresh and authentic. The staff and owner were courteous and helpful, 
+        and the cleanliness of the shop added to the overall experience. Special mention to the 
+        Kadi Peda – absolutely delicious! Will definitely be visiting again and recommending 
+        to friends and family."
+      </p>
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+      <span>— Uma Pratap Singh</span>
+    </div>
+
+    <div class="review-card">
+      <p class="review-text">
+        "The best Pedha available in Ghargaon is Quality Pedha. Number one in quality 
+        and taste since years. Visit once."
+      </p>
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+      <span>— Omkar Baswar</span>
+    </div>
+
+    <div class="review-card">
+      <p class="review-text">
+        "Tried the Kandi Peda and it was absolutely delightful! Soft texture, rich in flavor,
+        and not overly sweet — just the way a traditional peda should be.Perfect for festivals
+        or gifting. Highly recommended for anyone who loves authentic Indian sweets!."
+      </p>
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+      <span>— vipin jha</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Add Reviews -->
+<section id="add-review" class="add-review">
+  <h2>Add Your Review</h2>
+  <p>Scan the QR code below to share your experience</p>
+
+  <img src="images/Shop Map QR Final Code.png" alt="Scan to Add Review" class="qr-img">
+
+  <p class="small-text">
+    ⭐ Takes less than 10 seconds 
+    ⭐ (Opens Google Maps → Tap “Write a review”) ⭐Your feedback helps us serve better 🙏
+  </p>
+</section>
+
+
 
 <!-- Order Section -->
 <section class="order" id="order">
@@ -517,7 +689,7 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
 <p>Phone: 9890789491</p>
 <iframe src="https://www.google.com/maps?q=Quality+Pedha+Center,+Ghargaon,+Maharashtra&output=embed"></iframe>
 </section>
-<!-- Store Timings & Availability
+<!-- Store Timings & Availability -->
 <div style="margin-top:30px; padding:25px; background:rgba(255,255,255,0.15); border-radius:20px;">
   <h3 style="font-family:'Playfair Display',serif; margin-bottom:15px;">
     🕒 Store Timings & Availability
@@ -527,7 +699,7 @@ footer{text-align:center;padding:25px;background: linear-gradient(to right, #091
   <p><strong>Fresh Pedhas:</strong> Available every day</p>
   <p><strong>Bulk Orders:</strong> Weddings, festivals & special events</p>
   <p><strong>Advance Booking:</strong> Recommended for large orders</p>
-</div> -->
+</div>
 <!-- Footer -->
 <footer>
 <p>&copy; 2026 Quality Pedha Center | Crafted with ❤️ by Gadekar Family</p>
